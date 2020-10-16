@@ -56,7 +56,7 @@ public class MyLinkedList {
 			tempNode = tempNode.getNext();
 		}
 		myNodes.append(tempNode.getKey());
-		System.out.println(myNodes);
+		System.out.println(myNodes); 
 	}
 
 }
