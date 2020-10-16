@@ -17,12 +17,11 @@ public class MyLinkedList {
 		if (this.head == null) {
 			this.head = newNode;
 		} else {
-			INode tempNode = this.head;
+			newNode.setNext(head);
 			this.head = newNode;
-			this.head.setNext(tempNode);
 		}
 	}
-	
+
 	public void append(INode newNode) {
 		if (this.tail == null) {
 			this.tail = newNode;
@@ -30,10 +29,21 @@ public class MyLinkedList {
 		if (this.head == null) {
 			this.head = newNode;
 		} else {
-			INode tempNode = this.tail;
+			this.tail.setNext(newNode);
 			this.tail = newNode;
-			tempNode.setNext(tail);
 		}
+	}
+
+	public void insert(INode myNode, INode newNode) {
+		INode tempNode = myNode.getNext();
+		myNode.setNext(newNode);
+		newNode.setNext(tempNode);
+	}
+	
+	public INode pop() {
+		INode tempNode = this.head;
+		this.head = head.getNext();
+		return tempNode;
 	}
 
 	public void printMyNodes() {
